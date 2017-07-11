@@ -1,6 +1,6 @@
 SetupPages = {
    {
-      title = "Information",
+      title = "Information -simple",
       text = {
          { t = "Firmware",      x =  25,  y = 16 },
          { t = "App Ver.",      x = 25,  y = 26 },
@@ -22,7 +22,7 @@ SetupPages = {
       },
    },
    {
-      title = "Presets Agility",
+      title = "Presets Agility  -simple",
       text = {
          { t = "Param 1",      x =  25,  y = 16 },
          { t = "Param 2",      x = 25,  y = 26 },
@@ -38,7 +38,7 @@ SetupPages = {
       },
    },
    {
-      title = "Presets Model Size",
+      title = "Presets Model Size -simple",
       text = {
          { t = "Param 1",      x =  25,  y = 16 },
          { t = "Param 2",      x = 25,  y = 26 },
@@ -54,7 +54,7 @@ SetupPages = {
       },
    },
    {
-      title = "Param Set 1",
+      title = "Param Set 1 -simple",
       text = {
          { t = "Agility",      x =  25,  y = 16 },
          { t = "Overall gain",      x = 25,  y = 26 },
@@ -67,7 +67,7 @@ SetupPages = {
       },
    },
    {
-      title = "Param Set 2",
+      title = "Param Set 2 -simple",
       text = {
          { t = "Agility",      x =  25,  y = 16 },
          { t = "Overall gain",      x = 25,  y = 26 },
@@ -80,7 +80,7 @@ SetupPages = {
       },
    },
    {
-      title = "Param Set 3",
+      title = "Param Set 3 -simple",
       text = {
          { t = "Agility",      x =  25,  y = 16 },
          { t = "Overall gain",      x = 25,  y = 26 },
@@ -93,7 +93,7 @@ SetupPages = {
       },
    },
    {
-      title = "Live Data",
+      title = "Live Data -simple",
       text = {
          { t = "P",      x =  72,  y = 14 },
          { t = "I",      x = 100,  y = 14 },
