@@ -161,6 +161,8 @@ end
 function drawScreenTitle(screen_title)
    lcd.drawFilledRectangle(0, 0, LCD_W, 10)
    lcd.drawText(1,1,screen_title,INVERS)
+   --lcd.drawText(UserMode[1]) need UserMode setup
+   --lcd.drawText(1,55,"Simple",INVERS)
 end
 
 local function drawScreen(page,page_locked)
@@ -383,59 +385,5 @@ local function run_ui(event)
    return 0
 end 
 
-local freqLookup = {
-    { 5865, 5845, 5825, 5805, 5785, 5765, 5745, 5725 }, -- Boscam A
-    { 5733, 5752, 5771, 5790, 5809, 5828, 5847, 5866 }, -- Boscam B
-    { 5705, 5685, 5665, 5645, 5885, 5905, 5925, 5945 }, -- Boscam E
-    { 5740, 5760, 5780, 5800, 5820, 5840, 5860, 5880 }, -- FatShark
-    { 5658, 5695, 5732, 5769, 5806, 5843, 5880, 5917 }, -- RaceBand
-}
-
-local function updateVTXFreq(page)
-   page.values["f"] = freqLookup[page.values[2]][page.values[3]]
-end
-
-local function postReadVTX(page)
-   if page.values[1] == 3 then -- SmartAudio
-      page.fields[3].table = { 25, 200, 500, 800 }
-      page.fields[3].max = 4
-   elseif page.values[1] == 4 then -- Tramp
-      page.fields[3].table = { 25, 100, 200, 400, 600 }
-      page.fields[3].max = 5
-   else
-      -- TODO: print label on unavailable (0xFF) vs. unsupported (0)
-      --page.values = nil
-   end
-
-
-   if page.values and page.values[2] and page.values[3] then
-      if page.values[2] > 0 and page.values[3] > 0 then
-         updateVTXFreq(page)
-      else
-         page.values = nil
-      end
-   end
-end
-
-local function getWriteValuesVTX(values)
-   local channel = (values[2]-1)*8 + values[3]-1
-   return { bit32.band(channel,0xFF), bit32.rshift(channel,8), values[4], values[5] }
-end
-
-SetupPages[1].read  = MSP_PID
-SetupPages[1].write = MSP_SET_PID
-
-SetupPages[2].read  = MSP_RC_TUNING
-SetupPages[2].write = MSP_SET_RC_TUNING 
-
-SetupPages[3].read           = MSP_VTX_CONFIG
-SetupPages[3].write          = MSP_VTX_SET_CONFIG
-SetupPages[3].postRead       = postReadVTX
-SetupPages[3].getWriteValues = getWriteValuesVTX
-SetupPages[3].saveMaxRetries = 0
-SetupPages[3].saveTimeout    = 300 -- 3s
-
-SetupPages[3].fields[1].upd = updateVTXFreq
-SetupPages[3].fields[2].upd = updateVTXFreq
 
 return run_ui
