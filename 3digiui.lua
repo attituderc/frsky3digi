@@ -167,7 +167,7 @@ local function drawScreen(page,page_locked)
 
    local screen_title = page.title
 
-   drawScreenTitle("FBL / "..screen_title)
+   drawScreenTitle("3Digi/ "..screen_title)
 
    for i=1,#(page.text) do
       local f = page.text[i]

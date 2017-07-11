@@ -240,5 +240,5 @@ function mspPollReply()
 end
 
 --
--- End of MSP/SPORT code
+-- End of SPORT config
 --
