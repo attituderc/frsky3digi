@@ -3,6 +3,10 @@
 <img align="left" style="width:35%;height:35%;margin:20px 30px" src="http://attituderc.com/frsky3digi/3digi_small.png"> The 3 Digi flight controller is very configurable and the Frsky family of RX and TX are very capable. Our idea is to get them together much like the Vcontrol and Vbar. We want to control the set up and configuration of the 3 Digi via the Frsky radio. Utilizing the 2 way communication on the frsky receivers. We are currently starting up this project. No code is ready as of yet, hopefully soon. We are working with the developers at 3digi, mostly they are supporting the project with great information.
 Currently all the development is being done on my flying hardware. This slows the development down a bit, as sometime I like to fly.
 
+The files that are here are the start of the project. They are not ready and just the loose framework. 
+
+The .bmp files get moved to the IMAGES/ directory
+
 This is a fully open sourced project.
 
 ***
