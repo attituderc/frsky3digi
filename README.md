@@ -23,12 +23,13 @@ Programmers
 * Frsky serial
 * Serial
 
-We need hardware.
+We need hardware for testing.
 * 3Digi (new or used)
-* FrSky X4R-SB, XSR 
+* FrSky receivers 
 
 We need people willing to test on their hardware
 * Horus X12S
+* Horus X10S
 * Taranis Plus (X9D+)
 * Taranis Q X7
 * Different Receivers 
